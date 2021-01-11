@@ -21,6 +21,9 @@ dependencies {
     implementation('org.jetbrains.kotlin:kotlin-reflect')
     implementation('org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2')
 
+    // Koin - DI
+    implementation 'org.koin:koin-core:2.0.0-GA2'
+
     // http4k
     implementation platform("org.http4k:http4k-bom:$http4kVersion")
     implementation "org.http4k:http4k-core"
@@ -39,9 +42,11 @@ dependencies {
     implementation 'org.jdbi:jdbi3-kotlin-sqlobject:3.18.0'
 
     // Test
-    testImplementation "org.http4k:http4k-testing-kotest:$http4kVersion"
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation("io.mockk:mockk:1.10.2")
+    testImplementation("io.kotest:kotest-assertions-core-jvm:4.3.2")
+    testImplementation("org.http4k:http4k-testing-kotest:$http4kVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 application {
