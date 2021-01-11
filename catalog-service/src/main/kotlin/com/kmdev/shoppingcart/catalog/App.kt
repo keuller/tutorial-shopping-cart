@@ -23,5 +23,5 @@ fun main() {
     // register runtime hook to stop server
     Runtime.getRuntime().addShutdownHook(Thread { server.stop() })
 
-    logger.info("Server has been started at http://0.0.0.0:${server.port()}")
+    logger.info("Catalog service has been started at http://0.0.0.0:${server.port()}")
 }
